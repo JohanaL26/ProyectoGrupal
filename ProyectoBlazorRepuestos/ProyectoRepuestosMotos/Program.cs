@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Web;
 using ProyectoRepuestosMotos.Data;
 using ProyectoRepuestosMotos.Interfaces;
 using ProyectoRepuestosMotos.Servicios;
+using CurrieTechnologies.Razor.SweetAlert2;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,7 @@ ConfiguracionMySQL cadenaConexion = new ConfiguracionMySQL(builder.Configuration
 builder.Services.AddSingleton(cadenaConexion); //bd
 
 builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>(); //inyectamos el servicio
+builder.Services.AddSweetAlert2();
 
 var app = builder.Build();
 

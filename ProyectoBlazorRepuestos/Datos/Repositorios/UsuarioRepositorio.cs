@@ -29,14 +29,45 @@ public class UsuarioRepositorio : IUsuarioRepositorio
 
 
 
-    public Task<bool> Actualizar(Usuario usuario)
+    public async Task<bool> Actualizar(Usuario usuario)
     {
-        throw new NotImplementedException();
+        int resultado;
+        try
+        {
+            using MySqlConnection conexion = Conexion();
+            await conexion.OpenAsync();
+            string sql = "UPDATE usuario SET CodigoUsuario = @CodigoUsuario, Nombre = @Nombre, Rol = @Rol, Clave = @Clave, EstaActivo = @EstaActivo WHERE CodigoUsuario = @CodigoUsuario ;";
+            resultado = await conexion.ExecuteAsync(sql, new
+            {
+                usuario.CodigoUsuario,
+                usuario.Nombre,
+                usuario.Rol,
+                usuario.Clave,
+                usuario.EstaActivo
+            });
+            return resultado > 0;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
     }
 
-    public Task<bool> Eliminar(Usuario usuario)
+    public async Task<bool> Eliminar(Usuario usuario)
     {
-        throw new NotImplementedException();
+        int resultado;
+        try
+        {
+            using MySqlConnection conexion = Conexion();
+            await conexion.OpenAsync();
+            string sql = "DELETE FROM usuario WHERE CodigoUsuario = @CodigoUsuario;";
+            resultado = await conexion.ExecuteAsync(sql, new { usuario.CodigoUsuario });
+            return resultado > 0;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
     }
 
     public async Task<IEnumerable<Usuario>> GetLista()
@@ -72,8 +103,20 @@ public class UsuarioRepositorio : IUsuarioRepositorio
         return user;
     }
 
-    public Task<bool> Nuevo(Usuario usuario)
+    public async Task<bool> Nuevo(Usuario usuario)
     {
-        throw new NotImplementedException();
+        int resultado;
+        try
+        {
+            using MySqlConnection conexion = Conexion();
+            await conexion.OpenAsync();
+            string sql = "INSERT INTO usuario (CodigoUsuario, Nombre, Rol, Clave, EstaActivo) VALUES (@CodigoUsuario, @Nombre, @Rol, @Clave, @EstaActivo)";
+            resultado = await conexion.ExecuteAsync(sql, usuario);
+            return resultado > 0;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
     }
 }
