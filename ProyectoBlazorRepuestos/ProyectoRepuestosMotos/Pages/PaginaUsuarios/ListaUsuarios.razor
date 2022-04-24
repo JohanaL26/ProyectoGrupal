@@ -1,12 +1,15 @@
 ﻿@page "/Usuarios"
 
-<h3>Lista de Usuarios</h3>
+
+<h1  class="text-center" style="color:blue">Lista de Usuarios</h1>
+
 
 <div class"form-group row">
     <div class="col-sm-2">
-        <a href="/Usuarios/Nuevo" class="btn btn-primary">Nuevo Usuario</a>
+        <a href="/Usuarios/Nuevo" class="btn btn-outline-primary">Nuevo Usuario</a>
     </div>
 </div>
+
 
 @if (usuariosLista == null)
 {
@@ -32,7 +35,7 @@ else
                     <td>@user.Nombre</td>
                     <td>@user.Rol</td>
                     <td>
-                        @if(@user.EstaActivo)
+                        @if (@user.EstaActivo)
                         {
                             <span class="oi oi-circle-check" style="color:green;"></span>
                         }

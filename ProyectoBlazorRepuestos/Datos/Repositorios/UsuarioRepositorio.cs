@@ -97,7 +97,7 @@ public class UsuarioRepositorio : IUsuarioRepositorio
             string sql = "SELECT * FROM usuario WHERE CodigoUsuario = @CodigoUsuario;";
             user = await conexion.QueryFirstAsync<Usuario>(sql, new { codigo });
         }
-        catch (Exception)
+        catch (Exception ex)
         {
         }
         return user;

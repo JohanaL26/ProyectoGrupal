@@ -23,59 +23,59 @@ partial class EditarUsuario
         }
     }
 
-    //protected async Task Guardar()
-    //{
-    //    if (string.IsNullOrEmpty(user.CodigoUsuario) || string.IsNullOrEmpty(user.Nombre) || string.IsNullOrEmpty(user.Rol) || user.Rol == "Seleccionar")
-    //    {
-    //        return;
-    //    }
+    protected async Task Guardar()
+    {
+        if (string.IsNullOrEmpty(user.CodigoUsuario) || string.IsNullOrEmpty(user.Nombre) || string.IsNullOrEmpty(user.Rol) || user.Rol == "Seleccionar")
+        {
+            return;
+        }
 
-    //    bool edito = await _usuarioServicio.Actualizar(user);
-    //    if (edito)
-    //    {
-    //        await Swal.FireAsync("Felicidades", "Usuario actualizado con exito", SweetAlertIcon.Success);
-    //    }
-    //    else
-    //    {
-    //       await Swal.FireAsync("Error", "Usuario no se pudo actualizar", SweetAlertIcon.Error);
-    //    }
-    //    _navigationManager.NavigateTo("/Usuarios");
+        bool edito = await _usuarioServicio.Actualizar(user);
+        if (edito)
+        {
+            await Swal.FireAsync("Felicidades", "Usuario actualizado con exito", SweetAlertIcon.Success);
+        }
+        else
+        {
+            await Swal.FireAsync("Error", "Usuario no se pudo actualizar", SweetAlertIcon.Error);
+        }
+        _navigationManager.NavigateTo("/Usuarios");
 
-    //}
+    }
 
-    //protected async Task Cancelar()
-    //{
-    //    _navigationManager.NavigateTo("/Usuarios");
-    //}
+    protected async Task Cancelar()
+    {
+        _navigationManager.NavigateTo("/Usuarios");
+    }
 
-    //protected async Task Eliminar()
-    //{
-    //    bool elimino = false;
+    protected async Task Eliminar()
+    {
+        bool elimino = false;
 
-    //    SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
-    //    {
-    //        Title = "¿Seguro que quiere eliminar el registro?",
-    //        Icon = SweetAlertIcon.Question,
-    //        ShowCancelButton = true,
-    //        ConfirmButtonText = "Aceptar",
-    //        CancelButtonText = "Cancelar"
-    //    });
+        SweetAlertResult result = await Swal.FireAsync(new SweetAlertOptions
+        {
+            Title = "¿Seguro que quiere eliminar el registro?",
+            Icon = SweetAlertIcon.Question,
+            ShowCancelButton = true,
+            ConfirmButtonText = "Aceptar",
+            CancelButtonText = "Cancelar"
+        });
 
-    //    if (!string.IsNullOrEmpty(result.Value))
-    //    {
-    //        elimino = await _usuarioServicio.Eliminar(user);
+        if (!string.IsNullOrEmpty(result.Value))
+        {
+            elimino = await _usuarioServicio.Eliminar(user);
 
-    //        if (elimino)
-    //        {
-    //            await Swal.FireAsync("Felicidades", "Usuario eliminado con exito", SweetAlertIcon.Success);
-    //            _navigationManager.NavigateTo("/Usuarios");
-    //        }
-    //        else
-    //        {
-    //            await Swal.FireAsync("Error", "Usuario no se pudo eliminar", SweetAlertIcon.Error);
-    //        }
-    //    }
-    //}
+            if (elimino)
+            {
+                await Swal.FireAsync("Felicidades", "Usuario eliminado con exito", SweetAlertIcon.Success);
+                _navigationManager.NavigateTo("/Usuarios");
+            }
+            else
+            {
+                await Swal.FireAsync("Error", "Usuario no se pudo eliminar", SweetAlertIcon.Error);
+            }
+        }
+    }
 
 
 
