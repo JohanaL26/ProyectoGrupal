@@ -87,7 +87,7 @@ public class UsuarioRepositorio : IUsuarioRepositorio
         return lista;
     }
 
-    public async Task<Usuario> GetPorCodigo(string codigo)
+    public async Task<Usuario> GetPorCodigo(string codigoUsuario)
     {
         Usuario user = new Usuario();
         try
@@ -95,9 +95,9 @@ public class UsuarioRepositorio : IUsuarioRepositorio
             using MySqlConnection conexion = Conexion();
             await conexion.OpenAsync();
             string sql = "SELECT * FROM usuario WHERE CodigoUsuario = @CodigoUsuario;";
-            user = await conexion.QueryFirstAsync<Usuario>(sql, new { codigo });
+            user = await conexion.QueryFirstAsync<Usuario>(sql, new { codigoUsuario });
         }
-        catch (Exception ex)
+        catch (Exception)
         {
         }
         return user;
