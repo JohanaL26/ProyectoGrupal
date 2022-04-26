@@ -1,0 +1,56 @@
+﻿@page "/Productos/Editar/{CodigoProducto}"
+
+
+<EditForm Model="@produc">
+
+    <div class="form-group row">
+        <label for="Codigo" class="col-sm-2 col-form-label">
+            Código
+        </label>
+        <div class="col-sm-10">
+            <InputText id="Codigo" class="form-control" placeholder="Código" @bind-Value="produc.CodigoProducto" />
+            <ValidationMessage For="@(() => produc.CodigoProducto)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Descripcion" class="col-sm-2 col-form-label">
+            Descripción
+        </label>
+        <div class="col-sm-10">
+            <InputText id="Descripcion" class="form-control" placeholder="Descripción" @bind-Value="produc.Descripcion" />
+            <ValidationMessage For="@(() => produc.Descripcion)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Precio" class="col-sm-2 col-form-label">
+            Precio
+        </label>
+        <div class="col-sm-10">
+            <InputNumber id="Precio" class="form-control" placeholder="Precio" @bind-Value="produc.Precio" />
+            <ValidationMessage For="@(() => produc.Precio)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <label for="Existencia" class="col-sm-2 col-form-label">
+            Existencia
+        </label>
+        <div class="col-sm-10">
+            <InputNumber id="Existencia" class="form-control" placeholder="Existencia" @bind-Value="produc.Existencia" />
+            <ValidationMessage For="@(() => produc.Existencia)" />
+        </div>
+    </div>
+
+    <div class="form-group row">
+        <p>
+            <input type="submit" class="btn-toolbar btn-primary" value="Guardar" @onclick="Guardar" />
+       @*   <input type="submit" class="btn-toolbar btn-danger" value="Cancelar" @onclick="Cancelar" />
+            <input type="submit" class="btn-toolbar btn-warning" value="Eliminar" @onclick="Eliminar" />*@
+        </p>
+    </div>
+
+
+
+</EditForm>

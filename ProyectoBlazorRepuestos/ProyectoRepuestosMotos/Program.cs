@@ -4,6 +4,7 @@ using ProyectoRepuestosMotos.Data;
 using ProyectoRepuestosMotos.Interfaces;
 using ProyectoRepuestosMotos.Servicios;
 using CurrieTechnologies.Razor.SweetAlert2;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,6 +18,13 @@ builder.Services.AddSingleton(cadenaConexion); //bd
 
 builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>(); //inyectamos el servicio
 builder.Services.AddSweetAlert2();
+
+builder.Services.AddScoped<IProductoServicio, ProductoServicio>(); //inyectamos el servicio
+
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+builder.Services.AddHttpContextAccessor();
+
+
 
 var app = builder.Build();
 
@@ -34,7 +42,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();
+app.UseAuthorization();
+
+
 app.MapBlazorHub();
+app.MapControllers();
+
 app.MapFallbackToPage("/_Host");
 
 app.Run();

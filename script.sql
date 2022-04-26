@@ -55,6 +55,24 @@ CREATE TABLE IF NOT EXISTS `proyectofinal`.`detalleFactura` (
 ENGINE = InnoDB;
 
 
+INSERT INTO `proyectofinal`.`usuario` (`CodigoUsuario`, `Nombre`, `Rol`, `Clave`, `EstaActivo`) VALUES ('SLARA', 'Seydi Lara', 'Administrador', '111', '1');
+INSERT INTO `proyectofinal`.`usuario` (`CodigoUsuario`, `Nombre`, `Rol`, `Clave`, `EstaActivo`) VALUES ('LMEJIA', 'Luesbelin Mejia', 'Usuario', '222', '0');
+INSERT INTO `proyectofinal`.`usuario` (`CodigoUsuario`, `Nombre`, `Rol`, `Clave`, `EstaActivo`) VALUES ('GGARCIA', 'Gerson Garcia', 'Administrador', '123', '1');
+INSERT INTO `proyectofinal`.`usuario` (`CodigoUsuario`, `Nombre`, `Rol`, `Clave`, `EstaActivo`) VALUES ('EPAVON', 'Erick Pavon', 'Administrador', '456', '0');
+INSERT INTO `proyectofinal`.`usuario` (`CodigoUsuario`, `Nombre`, `Rol`, `Clave`, `EstaActivo`) VALUES ('ECRUZ', 'Eleazar Cruz', 'Usuario', '125', '0');
+INSERT INTO `proyectofinal`.`usuario` (`CodigoUsuario`, `Nombre`, `Rol`, `Clave`, `EstaActivo`) VALUES ('DVELASQUEZ', 'Dago Velasquez', 'Administrador', '789', '1');
+INSERT INTO `proyectofinal`.`usuario` (`CodigoUsuario`, `Nombre`, `Rol`, `Clave`, `EstaActivo`) VALUES ('DOSORIO', 'Dallin Osorio', 'Administrador', '000', '1');
+INSERT INTO `proyectofinal`.`usuario` (`CodigoUsuario`, `Nombre`, `Rol`, `Clave`, `EstaActivo`) VALUES ('CJEFF', 'Jeff Cocas', 'Usuario', '555', '0');
+
+
+INSERT INTO `proyectofinal`.`producto` (`CodigoProducto`, `Descripcion`, `Precio`, `Existencia`) VALUES ('A130', 'Cadena', '1100.00', '40');
+INSERT INTO `proyectofinal`.`producto` (`CodigoProducto`, `Descripcion`, `Precio`, `Existencia`) VALUES ('A129', 'Velocimetro', '1400.00', '15');
+INSERT INTO `proyectofinal`.`producto` (`CodigoProducto`, `Descripcion`, `Precio`, `Existencia`) VALUES ('A128', 'Escape', '800.00', '60');
+INSERT INTO `proyectofinal`.`producto` (`CodigoProducto`, `Descripcion`, `Precio`, `Existencia`) VALUES ('A127', 'Volante', '2000.00', '23');
+INSERT INTO `proyectofinal`.`producto` (`CodigoProducto`, `Descripcion`, `Precio`, `Existencia`) VALUES ('A126', 'Motor', '6000.00', '15');
+INSERT INTO `proyectofinal`.`producto` (`CodigoProducto`, `Descripcion`, `Precio`, `Existencia`) VALUES ('A125', 'Lubricante UwU', '350.00', '30');
+INSERT INTO `proyectofinal`.`producto` (`CodigoProducto`, `Descripcion`, `Precio`, `Existencia`) VALUES ('A124', 'Rin', '1200.00', '100');
+INSERT INTO `proyectofinal`.`producto` (`CodigoProducto`, `Descripcion`, `Precio`, `Existencia`) VALUES ('A123', 'Casco', '1500.00', '50');
 
 
 
