@@ -9,37 +9,74 @@
 
 <div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
     <nav class="flex-column">
-        <div class="nav-item px-3">
+        <AuthorizeView Roles= "Admnistrador, Usuario">
+            <Authorized>
+                <div class="nav-item px-3">
             <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
                 <span class="oi oi-home" aria-hidden="true"></span> Inicio
             </NavLink>
         </div>
+            </Authorized>
+        </AuthorizeView>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="usuarios">
-                <span class="oi oi-person" aria-hidden="true"></span> Usuarios
-            </NavLink>
-        </div>
 
-        <div class="nav-item px-3">
+        <AuthorizeView Roles="Administrador, Usuario">
+            <Authorized>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="Usuarios">
+                        <span class="oi oi-plus" aria-hidden="true"></span> Usuarios
+                    </NavLink>
+                </div>
+            </Authorized>
+        </AuthorizeView>
+
+
+        <AuthorizeView Roles="Administrador, Usuario">
+            <Authorized>
+                <div class="nav-item px-3">
             <NavLink class="nav-link" href="productos">
                 <span class="oi oi-monitor" aria-hidden="true"></span> Productos
             </NavLink>
         </div>
+            </Authorized>
+        </AuthorizeView>
 
-        <div class="nav-item px-3">
+        <AuthorizeView Roles="Administrador, Usuario">
+            <Authorized>
+                <div class="nav-item px-3">
             <NavLink class="nav-link" href="factura">
                 <span class="oi oi-monitor" aria-hidden="true"></span> Factura
             </NavLink>
         </div>
+            </Authorized>
+        </AuthorizeView>
 
-        <div class="nav-item px-3">
+        <AuthorizeView Roles="Administrador, Usuario">
+            <Authorized>
+                <div class="nav-item px-3">
             <NavLink class="nav-link" href="detallefactura">
                 <span class="oi oi-monitor" aria-hidden="true"></span> Detalle Factura
             </NavLink>
         </div>
+            </Authorized>
+        </AuthorizeView>
 
-       
+<<<<<<< HEAD
+        
+        <AuthorizeView Roles="Administrador, Usuario">
+            <Authorized>
+                <div class="nav-item px-3">
+            <NavLink class="nav-link" href="fetchdata">
+                <span class="oi oi-list-rich" aria-hidden="true"></span> Fetch data
+            </NavLink>
+        </div>
+            </Authorized>
+        </AuthorizeView>
+
+
+        
+=======
+>>>>>>> 5946e0d4c0ec3ee349d8fe4157c3cce9b6086fc8
     </nav>
 </div>
 

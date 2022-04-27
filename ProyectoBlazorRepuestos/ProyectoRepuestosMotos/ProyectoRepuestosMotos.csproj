@@ -7,12 +7,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Pages\Login.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="CurrieTechnologies.Razor.SweetAlert2" Version="5.2.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj" />
     <ProjectReference Include="..\Modelos\Modelos.csproj" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="https://docs.renovatebot.com/renovate-schema.json" /></VisualStudio></ProjectExtensions>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Pages\Login.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Pages\Login.razor" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Pages\Login.razor" />
   </ItemGroup>
 
 </Project>

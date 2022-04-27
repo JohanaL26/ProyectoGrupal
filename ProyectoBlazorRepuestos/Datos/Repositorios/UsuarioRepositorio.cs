@@ -116,15 +116,15 @@ public class UsuarioRepositorio : IUsuarioRepositorio
     }
 
 
-    public async Task<bool> ValidaUsuario(Acceso acceso)
+    public async Task<bool> ValidaUsuario(Login login)
     {
         bool valido = false;
         try
         {
             using MySqlConnection conexion = Conexion();
             await conexion.OpenAsync();
-            string sql = "SELECT 1 FROM usuario WHERE CodigoUsuario = @CodigoUsuario AND Clave = @Clave;";
-            valido = await conexion.ExecuteScalarAsync<bool>(sql, new { acceso.CodigoUsuario, acceso.Clave });
+            string sql = "SELECT 1 FROM usuario WHERE Codigo = @Codigo AND Clave = @Clave;";
+            valido = await conexion.ExecuteScalarAsync<bool>(sql, new { login.Codigo, login.Clave });
         }
         catch (Exception ex)
         {

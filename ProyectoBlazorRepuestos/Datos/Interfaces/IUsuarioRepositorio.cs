@@ -10,7 +10,7 @@ public interface IUsuarioRepositorio
     Task<IEnumerable<Usuario>> GetLista();
     Task<Usuario> GetPorCodigo(string codigo);
 
-    Task<bool> ValidaUsuario(Acceso acceso);
+    Task<bool> ValidaUsuario(Login acceso);
 
 
 }

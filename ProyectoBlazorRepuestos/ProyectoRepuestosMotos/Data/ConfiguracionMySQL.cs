@@ -1,4 +1,6 @@
-﻿namespace ProyectoRepuestosMotos.Data;
+﻿using MySql.Data.MySqlClient;
+
+namespace ProyectoRepuestosMotos.Data;
 
 public class ConfiguracionMySQL
 {
@@ -8,5 +10,16 @@ public class ConfiguracionMySQL
     {
         CadenaConexion = cadenaConexion;
     }
+
+    public static implicit operator MySqlConfiguration(ConfiguracionMySQL v)
+    {
+        throw new NotImplementedException();
+    }
+
+    //public static implicit operator MySqlConfiguration(ConfiguracionMySQL v)
+    //{
+    //    throw new NotImplementedException();
+    //}
+
 
 }
