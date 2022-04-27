@@ -16,13 +16,13 @@ partial class EditarProducto
 
     Producto produc = new Producto();
 
-    protected override async Task OnInitializedAsync()
-    {
-        if (!string.IsNullOrEmpty(Codigo))
-        {
-            produc= await _productoServicio.GetPorCodigo(Codigo);
-        }
-    }
+    //protected override async Task OnInitializedAsync()
+    //{
+    //    if (!string.IsNullOrEmpty(Codigo))
+    //    {
+    //        produc= await _productoServicio.GetPorCodigo(Codigo);
+    //    }
+    //}
 
    
 
