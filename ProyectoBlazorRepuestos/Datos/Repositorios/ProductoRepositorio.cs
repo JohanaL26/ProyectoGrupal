@@ -62,7 +62,7 @@ public class ProductoRepositorio: IProductoRepositorio
     }
 
 
-    public async Task<Producto> GetPorCodigo_Producto(string codigo_producto)
+    public async Task<Producto> GetPorCodigo(string codigo)
     {
         Producto produc = new Producto();
         try
@@ -70,7 +70,7 @@ public class ProductoRepositorio: IProductoRepositorio
             using MySqlConnection conexion = Conexion();
             await conexion.OpenAsync();
             string sql = "SELECT * FROM producto WHERE CodigoProducto = @CodigoProducto;";
-            produc = await conexion.QueryFirstAsync<Producto>(sql, new { codigo_producto });
+            produc = await conexion.QueryFirstAsync<Producto>(sql, new { codigo });
         }
         catch (Exception)
         {

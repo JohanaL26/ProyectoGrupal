@@ -17,6 +17,7 @@ ConfiguracionMySQL cadenaConexion = new ConfiguracionMySQL(builder.Configuration
 builder.Services.AddSingleton(cadenaConexion); //bd
 
 builder.Services.AddScoped<IUsuarioServicio, UsuarioServicio>(); //inyectamos el servicio
+builder.Services.AddScoped<IFacturaServicio, FacturaServicio>(); //inyectamos el servicio
 builder.Services.AddSweetAlert2();
 
 builder.Services.AddScoped<IProductoServicio, ProductoServicio>(); //inyectamos el servicio

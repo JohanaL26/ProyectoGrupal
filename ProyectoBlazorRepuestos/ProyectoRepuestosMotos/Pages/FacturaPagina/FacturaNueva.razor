@@ -1,0 +1,50 @@
+﻿@page "/Factura/Nuevo"
+
+<h1  class="text-center" style="color:blue">Lista de Productos</h1>
+
+
+
+
+
+
+@if (productoLista == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+               <th>Código Producto</th>
+                <th>Descripcion</th>
+                <th>Precio</th>
+                <th>Existencia</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fact in productoLista)
+            {
+                <tr>
+                    <td>@fact.CodigoProducto</td>
+                    <td>@fact.Descripcion</td>
+                    <td>@fact.Precio</td>
+                    <td>@fact.Existencia</td>
+                    
+                    <td>
+                        <button type="button" class="btn btn-outline-success" @onclick="Guardar">  Comprar  </button>
+                       
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<div class"form-group row">
+    <div class="col-sm-2">
+        <a href="/DetalleFactura" class="btn btn-outline-primary">Compra Terminada</a>
+    </div>
+</div>

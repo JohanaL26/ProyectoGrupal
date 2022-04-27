@@ -33,9 +33,9 @@ public class ProductoServicio: IProductoServicio
         return await productoRepositorio.GetLista_Producto();
     }
 
-    public async Task<Producto> GetPorCodigo_Producto(string codigo_producto)
+    public async Task<Producto> GetPorCodigo(string codigo)
     {
-        return await productoRepositorio.GetPorCodigo_Producto(codigo_producto);
+        return await productoRepositorio.GetPorCodigo(codigo);
     }
 
     public async Task<bool> Nuevo_Producto(Producto producto)

@@ -1,0 +1,44 @@
+﻿@page "/DetalleFactura"
+
+
+<h1  class="text-center" style="color:blue">Detalle de la factura</h1>
+
+
+
+
+@if (facturaLista == null)
+{
+    <div class="spinner"></div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CodigoFactura</th>
+                <th>Descripcion</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var fact in facturaLista)
+            {
+                <tr>
+                    <td>@fact.IdFactura</td>
+                    <td>@fact.Descripcion</td>
+                    <td>@fact.Cantidad</td>
+                    <td>@fact.Precio</td>
+                    <td>@fact.Total</td>
+                    
+                    <td>
+                     
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+}

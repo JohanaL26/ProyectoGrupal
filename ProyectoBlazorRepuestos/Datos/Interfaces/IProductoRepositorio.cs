@@ -13,7 +13,7 @@ public interface IProductoRepositorio
     Task<bool> Eliminar_Producto(Producto producto);
     Task<bool> Actualizar_Producto(Producto producto);
     Task<IEnumerable<Producto>> GetLista_Producto();
-    Task<Producto> GetPorCodigo_Producto(string codigo_producto);
+    Task<Producto> GetPorCodigo(string producto);
 
 
 }
