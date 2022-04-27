@@ -9,6 +9,7 @@ CREATE TABLE IF NOT EXISTS `proyectofinal`.`usuario` (
   `Nombre` VARCHAR(45) NOT NULL,
   `Rol` VARCHAR(15) NULL,
   `Clave` VARCHAR(45) NULL,
+  `EstaActivo` TINYINT NULL,
   PRIMARY KEY (`CodigoUsuario`))
 ENGINE = InnoDB;
 
