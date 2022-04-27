@@ -22,7 +22,7 @@ partial class FacturaNueva
         productoLista = await _productoServicio.GetLista();
     }
 
-    protected async Task Guardar()
+    protected async Task Comprar()
     {
         
 
