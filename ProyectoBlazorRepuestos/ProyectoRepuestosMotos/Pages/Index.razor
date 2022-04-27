@@ -1,4 +1,4 @@
-﻿@page "/"
+﻿@*@page "/"
 
 <PageTitle>Index</PageTitle>
 
@@ -7,5 +7,50 @@
 Welcome to your new app.
 
 <SurveyPrompt Title="How is Blazor working for you?" />
+*@
 
+@page "/"
 
+<AuthorizeView Roles="Administrador">
+    <Authorized Context="AuthenticationState">
+        <h1>¡Bienvenido Administrador! :D</h1>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView Roles="Usuario">
+    <Authorized Context="AuthenticationState">
+        <h1>¡Bienvenido Usuario! ;)</h1>
+    </Authorized>
+</AuthorizeView>
+
+<AuthorizeView>
+    <NotAuthorized>
+       
+        <style>
+  body {
+    background-image:url('https://www.motosan.es/wp-content/uploads/2019/02/Moto-Guzzi-V85-TT-05.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+<div>
+        <h1 class= "fw-bold" style="color: blue;">           Bienvenido  al Programa       </h1>
+        <h3 class= "fw-bold" style="color: blue;">       Venta de Repuestos de Moto</h3> 
+        <h1> </h1>
+        <h3 class= "fw-bold" style="color: blue;">Para poder acceder a la aplicacion primero debera de hacer su autentificacion, porfavor ingrese uno de los siguentes
+            perfiles de usuario: 
+        </h3>
+
+        <h4 class= "fw-bold" style="color: blue;">
+            Integrantes: 
+            Seydi Lara,
+            Erick Pavon,
+            Dallin Osorio,
+            Dagoberto Velasquez y
+            Gerson Garcia
+           
+        </h4>
+        
+        </div>
+    </NotAuthorized> 
+</AuthorizeView>

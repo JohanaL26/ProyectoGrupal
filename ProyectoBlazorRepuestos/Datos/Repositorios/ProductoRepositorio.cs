@@ -104,7 +104,7 @@ public class ProductoRepositorio: IProductoRepositorio
         {
             using MySqlConnection conexion = Conexion();
             await conexion.OpenAsync();
-            string sql = "UPDATE producto SET CodigoProducto = @CodigoProducto, Descripcion = @Descripcion, Precio = @Precio, Existencias = @Existencias WHERE CodigoProducto = @CodigoProducto ;";
+            string sql = "UPDATE producto SET CodigoProducto = @CodigoProducto, Descripcion = @Descripcion, Precio = @Precio, Existencia = @Existencia WHERE CodigoProducto = @CodigoProducto ;";
             resultado = await conexion.ExecuteAsync(sql, new
             {
                 producto.CodigoProducto,
